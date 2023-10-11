@@ -1,0 +1,15 @@
+public class SingleElement{
+    public static void main(String[] args) {
+        int[] nums = {4,4,5,1,2,1,2};
+        int ans=singleNumber(nums);
+        System.out.println(ans);
+
+    }
+    static int singleNumber(int[] nums) {
+        int res=0;
+        for(int i:nums)
+            res^=i;
+        return res;
+
+    }
+}
