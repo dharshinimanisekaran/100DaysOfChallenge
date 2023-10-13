@@ -1,0 +1,19 @@
+import java.util.HashSet;
+public class ContainsDuplicate {
+    public static void main(String[] args) {
+        int[] nums = {1, 2, 3, 4,1};
+        boolean res = containsDuplicate(nums);
+        System.out.println(res);
+    }
+
+    static boolean containsDuplicate(int[] nums) {
+        HashSet<Integer> unique = new HashSet<>();
+        for (int i : nums) {
+            if (unique.contains(i)) {
+                return true;
+            }
+            unique.add(i);
+        }
+        return false;
+    }
+}
