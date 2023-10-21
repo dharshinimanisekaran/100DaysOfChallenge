@@ -1,0 +1,26 @@
+public class StockSelling {
+    public static void main(String[] args)
+   {
+        int[] price={7,1,5,3,6,4};
+        int ans=maxProfit(price);
+        System.out.println(ans);
+    }
+    static int maxProfit(int[] prices)
+    {
+        int minPrice = Integer.MAX_VALUE;
+        int maxProfit = 0;
+        for (int x : prices)
+        {
+            if (x < minPrice)
+            {
+                minPrice = x;
+            }
+            else if (x - minPrice > maxProfit)
+            {
+                maxProfit = x - minPrice;
+            }
+        }
+
+        return maxProfit;
+    }
+}
