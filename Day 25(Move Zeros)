@@ -1,0 +1,20 @@
+import java.util.Arrays;
+public class MoveZeros{
+    public static void main(String[] args) {
+        int[] nums = {0, 1, 0, 3, 12};
+        moveZeroes(nums);
+        System.out.println(Arrays.toString(nums));
+    }
+
+    static void moveZeroes(int[] nums) {
+        int nonZero = 0;
+        for (int x = 0; x < nums.length; x++) {
+            if (nums[x] != 0) {
+                int temp = nums[x];
+                nums[x] = nums[nonZero];
+                nums[nonZero] = temp;
+                nonZero++;
+            }
+        }
+    }
+}
