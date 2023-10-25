@@ -1,0 +1,27 @@
+public class SplitString {
+    public static void main(String[] args) {
+        String s="RLRRLLRLRL";
+        int ans=balancedStringSplit(s);
+        System.out.println(ans);
+    }
+    static int balancedStringSplit(String s) {
+        int bc=0;
+        int lc=0;
+        int rc=0;
+        for(char x:s.toCharArray())
+        {
+            if(x=='L')
+                lc++;
+            else if(x=='R')
+                rc++;
+            if(lc==rc)
+            {
+                bc++;
+                lc=0;
+                rc=0;
+            }
+        }
+        return bc;
+
+    }
+}
