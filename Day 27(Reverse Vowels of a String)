@@ -1,0 +1,35 @@
+public class ReverseVowels {
+public static void main(String[] args) {
+        String s="leetcode";
+        String ans=reverseVowels(s);
+        System.out.println(ans);
+    }
+    static boolean isVowel(char x)
+    {
+        x=Character.toLowerCase(x);
+        return x=='a'||x=='e'||x=='i'||x=='o'||x=='u';
+    }
+    static String reverseVowels(String s) {
+        char[] arr=s.toCharArray();
+        int l=0;
+        int r=arr.length-1;
+        while(l<r)
+        {
+            while(l<r && !isVowel(arr[l]))
+            {
+                l++;
+            }
+            while(l<r && !isVowel(arr[r]))
+            {
+                r--;
+            }
+            char temp=arr[l];
+            arr[l]=arr[r];
+            arr[r]=temp;
+            l++;
+            r--;
+        }
+        return new String(arr);
+
+    }
+}
