@@ -1,0 +1,32 @@
+public class Consecutivecharacters {
+    public static void main(String[] args) {
+        String str="abbcccddddeeeeedcba";
+        int res=maxPower(str);
+        System.out.println(res);
+
+    }
+    public static int maxPower(String s) {
+        if(s.isEmpty())
+        {
+            return 0;
+        }
+        int maxcount=1;
+        char current=s.charAt(0);
+        int count=1;
+        for(int i=1;i<s.length();i++)
+        {
+            if(s.charAt(i)==current)
+            {
+                count++;
+            }
+            else
+            {
+                maxcount=Math.max(maxcount,count);
+                current=s.charAt(i);
+                count=1;
+            }
+        }
+        return Math.max(count,maxcount);
+
+    }
+}
